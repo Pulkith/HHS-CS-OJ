@@ -1,5 +1,5 @@
 <?php
-// ini_set('display_errors', '1');
+ ini_set('display_errors', '1');
 //echo 'Time Limit = ' . ini_get('max_execution_time') .
 
 $response = array();
@@ -13,7 +13,7 @@ $file_ext = $file_dir . ".java";
 $file_class = $file_dir . ".class";
 
 //Try to compile
-$compilation_result = exec('compilers/jdk-11.0.11/bin/javac '.$file_ext, $comp_output, $comp_response);
+$compilation_result = exec('compilers/jdk-11.0.11/bin/javac '.$file_ext . "", $comp_output, $comp_response);
 
 if($comp_response != "0") {
 	$response["verdict"] = "Compilation Error";
