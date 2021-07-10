@@ -1,6 +1,6 @@
 import java.util.*;
 import java.io.*;
-public class solution {
+public class solution_ {
     public static void main(String[] args) throws IOException {
         Reader in = new Reader();
         PrintWriter out = new PrintWriter(System.out);
@@ -76,5 +76,4 @@ public class solution {
             arr[i] = list.get(i);
         }
     }
-}	
-							
+}

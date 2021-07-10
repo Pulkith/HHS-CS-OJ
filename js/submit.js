@@ -12,7 +12,8 @@ const submit = function(){
 } 
 
 const push = function(solution_data) {
-	$.ajax({ url: 'services/Online-Judge/submit_solution.php',
+
+	$.ajax({ url: 'OnlineJudge/submit_solution.php',
 		data: {
 			"solution": solution_data,
 			"problem": "000A",
@@ -21,18 +22,22 @@ const push = function(solution_data) {
 		type: 'post',
 		async: true,
 		success: function(output) {
-			//if(output == -999)login();
-			if(output == "0") {
-				//console.log("Solution pushed successfully");
-				window.location.href="results.html";
-			} else {
-				//console.log(output)
-				console.log("Error code: " + output)
+			if(output == 'request posted') {
+				window.location.href="results.html?user=Monkey&problem=000A";
 			}
+			//if(output == -999)login();
+			//if(output == "0") {
+				//console.log("Solution pushed successfully");
+				//window.location.href="results.html";
+			//} else {
+				//console.log(output)
+				//console.log("Error code: " + output)
+			//}
 		},
 		error: function(output, error) {
 			console.log(error);
 			console.log(output);
 		}
 	});
+
 }
